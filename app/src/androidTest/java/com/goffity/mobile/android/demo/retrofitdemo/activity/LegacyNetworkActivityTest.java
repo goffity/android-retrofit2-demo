@@ -55,8 +55,8 @@ public class LegacyNetworkActivityTest {
 
         System.out.println("XXXXX: "+server.getHostName() + ":" + server.getPort());
 
-        server.enqueue(new MockResponse().setResponseCode(500));
-        server.enqueue(new MockResponse().setResponseCode(300).setBody(""));
+        server.enqueue(new MockResponse().setResponseCode(200));
+        server.enqueue(new MockResponse().setResponseCode(400).setBody(""));
 
         mActivityTestRule.launchActivity(new Intent());
 
